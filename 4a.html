@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Mobile Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+
+
+
+    
+<div data-role="page" id="home">
+    <center> 
+        <h1>GeeksforGeeks</h1> 
+  
+        <h4> 
+            Design Dialog popup using jQuery Mobile 
+        </h4> 
+  
+        <a href="#DialogBox" data-rel="popup" 
+            data-position-to="window" data-transition="pop"
+            class="ui-btn ui-corner-all ui-shadow ui-btn-inline  
+            ui-icon-delete ui-btn-icon-left ui-btn-b"> 
+            Remove page... 
+        </a> 
+          
+        <div data-role="popup" id="DialogBox" 
+            data-overlay-theme="b" data-theme="b" 
+            data-dismissible="false"
+            style="max-width:400px;"> 
+              
+            <div data-role="header" data-theme="a"> 
+                <h1>Remove Page?</h1> 
+            </div> 
+              
+            <div role="main" class="ui-content"> 
+                <h3 class="ui-title"> 
+                    Are you want to remove GeeksforGeeks page? 
+                </h3> 
+                  
+                <a href="#" class="ui-btn ui-corner-all  
+                    ui-shadow ui-btn-inline ui-btn-b"  
+                    data-rel="back">Cancel 
+                </a> 
+                  
+                <a href="#" class="ui-btn ui-corner-all  
+                    ui-shadow ui-btn-inline ui-btn-b"  
+                    data-rel="back" data-transition="flow"> 
+                    Remove 
+                </a> 
+            </div> 
+        </div> 
+    </center> 
+    <div data-role="header">
+        <h1>jQuery Mobile Example</h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <h2>Grid Layout</h2>
+        <div class="ui-grid-a">
+            <div class="ui-block-a"><div class="ui-bar ui-bar-a">Block A</div></div>
+            <div class="ui-block-b"><div class="ui-bar ui-bar-a">Block B</div></div>
+        </div>
+
+        <h2>Panel</h2>
+        <div data-role="panel" id="myPanel">
+            <h3>Panel Content</h3>
+            <p>This is a panel.</p>
+        </div>
+        <a href="#myPanel" data-role="button" data-inline="true" data-mini="true">Open Panel</a>
+
+        <h2>Dialog</h2>
+        <a href="#myDialog" data-rel="dialog" data-transition="pop" data-role="button">Open Dialog</a>
+        <div data-role="dialog" id="myDialog">
+            <div data-role="header">
+                <h1>Dialog Header</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <p>This is a dialog.</p>
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-icon-delete ui-btn-icon-right ui-btn-inline ui-mini">Close</a>
+            </div>
+        </div>
+
+        <h2>Slider</h2>
+        <label for="slider-1">Slider:</label>
+        <input type="range" name="slider-1" id="slider-1" min="0" max="100" value="50">
+
+        <h2>Navigation</h2>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" class="ui-btn-active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <h2>Event Handling</h2>
+        <a href="#" id="myButton" data-role="button">Click Me</a>
+    </div><!-- /content -->
+
+    <div data-role="footer">
+        <h4>Footer Content</h4>
+    </div><!-- /footer -->
+
+</div><!-- /page -->
+
+<script>
+    $(document).on("pagecreate", "#home", function () {
+        $("#myButton").on("click", function () {
+            alert("Button Clicked!");
+        });
+    });
+</script>
+
+</body>
+</html>
