@@ -1,0 +1,69 @@
+C:\Users\siddh>docker -v
+Docker version 26.0.0, build 2ae903e
+
+C:\Users\siddh>docker images
+^C
+C:\Users\siddh>docker pull openjdk
+Using default tag: latest
+latest: Pulling from library/openjdk
+197c1adcd755: Pull complete
+57b698b7af4b: Pull complete
+95a27dbe0150: Pull complete
+Digest: sha256:9b448de897d211c9e0ec635a485650aed6e28d4eca1efbc34940560a480b3f1f
+Status: Downloaded newer image for openjdk:latest
+docker.io/library/openjdk:latest
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview openjdk
+
+C:\Users\siddh>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\siddh>docker images
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+openjdk      latest    71260f256d19   14 months ago   470MB
+
+C:\Users\siddh>docker image
+
+Usage:  docker image COMMAND
+
+Manage images
+
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Run 'docker image COMMAND --help' for more information on a command.
+
+C:\Users\siddh>docker run --name JAVA -it -d openjdk
+ab5034c5bbca37baa45d7eb9fe063f10610ccc47733d5f0c517c35041633c745
+
+C:\Users\siddh>docker ps
+CONTAINER ID   IMAGE     COMMAND    CREATED          STATUS          PORTS     NAMES
+ab5034c5bbca   openjdk   "jshell"   19 seconds ago   Up 17 seconds             JAVA
+
+C:\Users\siddh>docker exec -it JAVA jshell
+|  Welcome to JShell -- Version 18.0.2.1
+|  For an introduction type: /help intro
+
+jshell> Sytem.out.println("hsds");
+|  Error:
+|  package Sytem does not exist
+|  Sytem.out.println("hsds");
+|  ^-------^
+
+jshell> System.out.println("hsds");
+hsds
+
+jshell> int a=5+10;
+a ==> 15
